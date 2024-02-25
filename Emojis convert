@@ -1,0 +1,32 @@
+emoji_dict = {
+    "😊": "happy",
+    "😢": "sad",
+    "😎": "cool",
+    "👍": "thumbs up",
+    "👎": "thumbs down",
+    "❤️": "love",
+    "🍕": "pizza",
+    "🎉": "celebration",
+    # Add more emojis and their meanings as needed
+}
+
+def emoji_to_text(emoji):
+    """Converts an emoji to its corresponding text representation."""
+    return emoji_dict.get(emoji, "Unknown emoji")
+
+def main():
+    # Example usage
+    while True:
+        user_input = input("Enter an emoji (or 'exit' to quit): ").strip()
+        
+        if user_input.lower() == "exit":
+            break
+
+        if len(user_input) == 1 and user_input in emoji_dict:
+            text_representation = emoji_to_text(user_input)
+            print(f"The text representation of {user_input} is: {text_representation}")
+        else:
+            print("Invalid input. Please enter a single emoji.")
+
+if __name__ == "__main__":
+    main()
